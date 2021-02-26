@@ -4,9 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 
 
@@ -23,26 +21,26 @@ namespace MSWebDeveloperConsoleApp
             {
                 XDocument document;
 
-                    using (HttpClient client = new HttpClient())
-                    {
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                using (HttpClient client = new HttpClient())
+                {
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-                        var streamAsync = await client.GetStreamAsync(url);
+                    var streamAsync = await client.GetStreamAsync(url);
 
-                        Stream result = streamAsync;
+                    Stream result = streamAsync;
 
-                        List<RSSFeedItem> templist = new List<RSSFeedItem>();
-                        document = System.Xml.Linq.XDocument.Load(result);
+                    List<RSSFeedItem> templist = new List<RSSFeedItem>();
+                    document = System.Xml.Linq.XDocument.Load(result);
 
-                        results = (from descendant in document.Descendants("item")
-                                   select new RSSFeedItem()
-                                   {
-                                       Description = descendant.Element("description").Value,
-                                       Title = descendant.Element("title").Value,
-                                       PublicationDate = descendant.Element("pubDate").Value,
-                                       Link = descendant.Element("link").Value,
-                                       CloudVendor = FeedType
-                                   }).ToList();
+                    results = (from descendant in document.Descendants("item")
+                               select new RSSFeedItem()
+                               {
+                                   Description = descendant.Element("description").Value,
+                                   Title = descendant.Element("title").Value,
+                                   PublicationDate = descendant.Element("pubDate").Value,
+                                   Link = descendant.Element("link").Value,
+                                   CloudVendor = FeedType
+                               }).ToList();
 
                 }
             }
