@@ -1,0 +1,16 @@
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.exe
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.deps.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.runtimeconfig.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.runtimeconfig.dev.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\ref\MSWebDevloperConsoleApp.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\MSWebDevloperConsoleApp.pdb
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.csprojAssemblyReference.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.AssemblyInfoInputs.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.AssemblyInfo.cs
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.csproj.CoreCompileInputs.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\ref\MSWebDevloperConsoleApp.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.pdb
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\MSWebDevloperConsoleApp.genruntimeconfig.cache

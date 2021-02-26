@@ -1,0 +1,16 @@
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.exe
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.deps.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.runtimeconfig.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.runtimeconfig.dev.json
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\ref\RSSFeedReaderConsole.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\bin\Debug\net5.0\RSSFeedReaderConsole.pdb
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.csprojAssemblyReference.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.AssemblyInfoInputs.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.AssemblyInfo.cs
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.csproj.CoreCompileInputs.cache
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\ref\RSSFeedReaderConsole.dll
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.pdb
+D:\AspireCSProjects2020\MSWebDevloperConsoleApp\obj\Debug\net5.0\RSSFeedReaderConsole.genruntimeconfig.cache
