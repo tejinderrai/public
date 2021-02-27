@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace MSWebDeveloperConsoleApp
+namespace RSSFeedReaderConsole
 {
     class Program
     {
@@ -10,7 +10,6 @@ namespace MSWebDeveloperConsoleApp
             Console.WriteLine("Reading RSS Feed...");
 
             var results = await RSSFeedReader.GetRSSFeedItems();
-
 
             foreach (RSSFeedItem item in results)
             {

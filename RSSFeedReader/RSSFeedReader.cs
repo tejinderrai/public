@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 
-namespace MSWebDeveloperConsoleApp
+namespace RSSFeedReaderConsole
 {
     class RSSFeedReader
     {
-        public static string MSDotNetBobURL = "https://devblogs.microsoft.com/dotnet/feed/";
+        public static string MSDotNetBlogURL = "https://devblogs.microsoft.com/dotnet/feed/";
         public async static Task<List<RSSFeedItem>> ReadArticlesWithWebClient(string url, string FeedType)
         {
             List<RSSFeedItem> results = new List<RSSFeedItem>();
@@ -39,7 +39,7 @@ namespace MSWebDeveloperConsoleApp
                                    Title = descendant.Element("title").Value,
                                    PublicationDate = descendant.Element("pubDate").Value,
                                    Link = descendant.Element("link").Value,
-                                   CloudVendor = FeedType
+                                   FeedType = FeedType
                                }).ToList();
 
                 }
@@ -53,7 +53,7 @@ namespace MSWebDeveloperConsoleApp
 
         public async static Task<List<RSSFeedItem>> GetRSSFeedItems()
         {
-            var results = await RSSFeedReader.ReadArticlesWithWebClient(MSDotNetBobURL, "DotNetBLog");
+            var results = await RSSFeedReader.ReadArticlesWithWebClient(MSDotNetBlogURL, "DotNetBLog");
 
             return results;
         }
