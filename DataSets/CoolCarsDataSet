@@ -1,0 +1,113 @@
+USE MASTER
+ 
+CREATE DATABASE COOLCARS
+ 
+USE COOLCARS
+ 
+SET ANSI_NULLS OFF
+GO
+ 
+SET QUOTED_IDENTIFIER ON
+GO
+ 
+CREATE TABLE [dbo].[CarList](
+[ID] [int] NOT NULL,
+[Manufacturer] [nvarchar](50) NOT NULL,
+[Model] [nvarchar](15) NOT NULL,
+[ModelYear] [nvarchar](4) NOT NULL,
+[ExteriorColour] [nvarchar](15) NOT NULL,
+[Miles] [int] NOT NULL,
+[Transmission] [nvarchar](20) NOT NULL,
+[Price] [money] NOT NULL,
+[InteriorColour] [nvarchar](15) NOT NULL,
+[Doors] [int] NOT NULL,
+[Type] [nvarchar](50) NOT NULL,
+[Picture] [image] NULL,
+CONSTRAINT [PrimaryKey_883d618c-922d-4695-98d4-c4e79c5871d7] PRIMARY KEY CLUSTERED
+(
+[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,
+ 
+ALLOW_PAGE_LOCKS = ON)
+)
+ 
+GO
+ 
+USE COOLCARS
+BEGIN TRANSACTION MORECARS
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('1','Ferrari','F355','1999','Red','20000','Manual','56000','Black','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('2','Ferrari','F355','1995','Blue','22000','Manual','46000','Black','2','GTB')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('3','Ferrari','Enzo','2006','Black','2000','Paddle Shift','225000','Red','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('4','Ferrari','438','1992','Yellow','26000','Manual','35000','Black','2','TB')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('5','Ferrari','F355','1997','Yellow','40000','Manual','3000','Red','2','Berlinetta')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('6','Porsche','Carerra','2008','Silver','15000','Automatic','78000','Black','2','GT4')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('7','Ferrari','308','1985','Red','60000','Manual','15000','Black','2','GTO')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('8','Lamborghini','Diablo','1994','Blue','66000','Manual','120000','Black','2','Coupe')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('9','Aston Martin','DB9','2008','Black','10000','Automatic','5544','Grey','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('10','BMW','545','2010','Black','40000','Paddle Shift','76000','Grey','4','M')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('11','Ferrari','F355','1999','Red','20000','Manual','56000','Black','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('12','Ferrari','F355','1995','Blue','22000','Manual','46000','Black','2','GTB')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('13','Ferrari','Enzo','2006','Black','2000','Paddle Shift','225000','Red','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('14','Ferrari','438','1992','Yellow','26000','Manual','35000','Black','2','TB')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('15','Ferrari','F355','1997','Yellow','40000','Manual','3000','Red','2','Berlinetta')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('16','Porsche','Carerra','2008','Silver','15000','Automatic','78000','Black','2','GT4')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('17','Ferrari','308','1985','Red','60000','Manual','15000','Black','2','GTO')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('18','Lamborghini','Diablo','1994','Blue','66000','Manual','120000','Black','2','Coupe')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('19','Aston Martin','DB9','2008','Black','10000','Automatic','5544','Grey','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('20','BMW','545','2010','Black','40000','Paddle Shift','76000','Grey','4','M')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('21','Ferrari','4+4','2012','Red','30000','Paddle Shift','16000','Black','2','coupe')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('22','Ferrari','4+4','2012','Red','30000','Paddle Shift','16000','Black','2','coupe')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('23','Ferrari','F430','2007','Red','2342','Paddle Shift','98000','Black','2','Spider')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('24','BMW','545','2010','Black','40000','Paddle Shift','76000','Grey','4','M')
+INSERT INTO dbo.CarList
+(ID,Manufacturer,Model,ModelYear,ExteriorColour,Miles,Transmission,Price,InteriorColour,Doors,Type)
+VALUES ('25','Ferrari','4+4','2012','Red','30000','Paddle Shift','16000','Black','2','coupe')
+COMMIT TRANSACTION MORECARS
