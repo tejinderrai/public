@@ -1,0 +1,1 @@
+const t={clearTimer:function(t){return t>-1&&clearTimeout(t),-1},clearInterval:function(t){return t>-1&&clearInterval(t),-1},throttle:function(t,n){let e,r=!1,l=this;function i(){if(r)return e=arguments,l=this,void 0;t.apply(this,arguments),r=!0,setTimeout((function(){r=!1,e&&(i.apply(l,e),e=null)}),n)}return i.cancel=function(){clearTimeout(n),n=e=l=null},i}};export{t as T};

@@ -1,0 +1,36 @@
+﻿@inject IJSRuntime JSRuntime
+
+<div id="Map" style="height:600px;width:100%;"> </div>
+
+@code {
+
+    [Parameter]
+    public string Latitude { get; set; }
+
+    [Parameter]
+    public string Longitude { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+        if (MapData.Latitude != null)
+        {
+            Latitude = MapData.Latitude;
+        }
+
+        if (MapData.Longitude != null)
+        {
+            Longitude = MapData.Longitude;
+        }
+
+        if (Latitude != null & Longitude != null)
+        {
+            await JSRuntime.InvokeAsync<string>("loadMapScenario", Latitude, Longitude);
+        }
+        else
+        {
+            await JSRuntime.InvokeAsync<string>("loadBasicMapScenario");
+
+        }
+    }
+}

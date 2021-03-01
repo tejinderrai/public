@@ -1,0 +1,60 @@
+﻿@using CosmosWorld.Components
+ 
+<DxFormLayout CaptionPosition="CaptionPosition.Vertical">
+    <DxFormLayoutItem Caption="Country" ColSpanLg="4" ColSpanMd="1">
+        <Template>
+            <DxComboBox Data="@CountriesData" @bind-Value="@CurrentCountryValue" FilteringMode="DataGridFilteringMode.Contains" SelectedItemChanged="@SelectCountryChanged" SizeMode="SizeMode.Small" DropDownWidthMode="DropDownWidthMode.ContentWidth" />
+
+        </Template>
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="City" ColSpanLg="4" ColSpanMd="2">
+        <Template>
+            <DxComboBox Data="@CitiesData" @bind-Value="@CurrentCityValue" FilteringMode="DataGridFilteringMode.Contains" SelectedItemChanged="@SelectCityChanged" SizeMode="SizeMode.Small" DropDownWidthMode="DropDownWidthMode.ContentWidth" />
+        </Template>
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+<CosmosWorld.Components.BingMapsComponent Longitude="@MapData.Longitude" Latitude="@MapData.Latitude"></CosmosWorld.Components.BingMapsComponent>
+
+@code {
+
+    public string CurrentCountryValue { get; set; }
+    public string CurrentCityValue { get; set; }
+
+    //IEnumerable<string> CountriesData = CountriesService.Countries;
+    List<string> CountriesData = CountriesService.Countries;
+    List<string> CitiesData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (CountriesService.Countries.Count <= 0)
+        {
+            await CountriesService.PopulateCountries();
+        }
+    }
+
+    protected async void SelectCountryChanged(string Country)
+    {
+        CurrentCityValue = "";
+        string selectedCountry = Country;
+        MapData.SelectedCountry = Country;
+        List<string> CityList = await CountriesService.QueryCityNames(selectedCountry);
+        CitiesData = CityList;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    protected async void SelectCityChanged(string SelectedCity)
+    {
+        CurrentCityValue = SelectedCity;
+        MapData.SelectedCity = SelectedCity;
+        List<CountryData> CountryandCityInfo = await CountriesService.QueryCityCoordinates(CurrentCountryValue, SelectedCity);
+
+        string Lat = CountryandCityInfo.FirstOrDefault().Lat;
+        string Long = CountryandCityInfo.FirstOrDefault().Lng;
+
+        MapData.Latitude = Lat;
+        MapData.Longitude = Long;
+
+        await InvokeAsync(StateHasChanged);
+    }
+}

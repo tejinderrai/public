@@ -1,0 +1,1 @@
+import{K as e}from"./esm-chunk-54fd5426.js";function t(e){if(r(e.keyCode))return;e.target.dataset.previousValue=e.target.value}function a(e){if(r(e.keyCode))return!1;const t=e.target;return!(t&&t.dataset.previousValue===e.target.value)}function r(t){return t===e.Tab||16<=t&&t<=20}export{a,t as k};
