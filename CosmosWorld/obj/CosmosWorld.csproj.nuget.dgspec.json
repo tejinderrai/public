@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AspireCSProjects2020\\CosmosWorld\\CosmosWorld.csproj": {}
+    "D:\\GitHub\\Public\\tejinderrai\\public\\CosmosWorld\\CosmosWorld.csproj": {}
   },
   "projects": {
-    "D:\\AspireCSProjects2020\\CosmosWorld\\CosmosWorld.csproj": {
+    "D:\\GitHub\\Public\\tejinderrai\\public\\CosmosWorld\\CosmosWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AspireCSProjects2020\\CosmosWorld\\CosmosWorld.csproj",
+        "projectUniqueName": "D:\\GitHub\\Public\\tejinderrai\\public\\CosmosWorld\\CosmosWorld.csproj",
         "projectName": "CosmosWorld",
-        "projectPath": "D:\\AspireCSProjects2020\\CosmosWorld\\CosmosWorld.csproj",
+        "projectPath": "D:\\GitHub\\Public\\tejinderrai\\public\\CosmosWorld\\CosmosWorld.csproj",
         "packagesPath": "C:\\Users\\tejin\\.nuget\\packages\\",
-        "outputPath": "D:\\AspireCSProjects2020\\CosmosWorld\\obj\\",
+        "outputPath": "D:\\GitHub\\Public\\tejinderrai\\public\\CosmosWorld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
