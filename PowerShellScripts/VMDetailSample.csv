@@ -1,0 +1,3 @@
+VMName,TargetStorageContainer,TargetFolder
+VMTest1,vmbackup,vmtest1vhds
+VMTest2,vmbackup,vmtest2vhds
