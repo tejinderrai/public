@@ -10,4 +10,9 @@ CosmosDBWorld is a Blazor Server project, which reads countries and cities from 
 PowerShellScripts is a folder of my PowerShell scripts.
 CopyMangedDisktoBlobStorage.ps1 - Copies managed disks to storage account containers and folders based on a .CSV input file.
 
+DVLAConsoleAPICaller
+This is a sample Console application which makes a request to the DVLA Vehicle Enquiry Service API. You will need to request your own API key from the DVLA, link below.
+
+https://developer-portal.driver-vehicle-licensing.api.gov.uk/apis/vehicle-enquiry-service/vehicle-enquiry-service-description.html#register-for-ves-api 
+
 Tejinder Rai
