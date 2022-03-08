@@ -15,6 +15,6 @@ This is a sample Console application which makes a request to the DVLA Vehicle E
 
 https://developer-portal.driver-vehicle-licensing.api.gov.uk/apis/vehicle-enquiry-service/vehicle-enquiry-service-description.html#register-for-ves-api 
 
-CarShop is a Blazor Server project which is modelled on a car showroom using Microsoft Entity Framework Core, DevExpress components and Azure SQL DB.
+CarShop is a Blazor Server project which is modeled on a car showroom using Microsoft Entity Framework Core, DevExpress components and Azure SQL DB.
 
 Tejinder Rai
