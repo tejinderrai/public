@@ -1,0 +1,5 @@
+INSERT INTO Salutation (Name, Registered) VALUES ('Mr',GETDATE())
+INSERT INTO Salutation (Name, Registered) VALUES ('Mrs',GETDATE())
+INSERT INTO Salutation (Name, Registered) VALUES ('Ms',GETDATE())
+INSERT INTO Salutation (Name, Registered) VALUES ('Jnr',GETDATE())
+INSERT INTO Salutation (Name, Registered) VALUES ('Snr',GETDATE())
