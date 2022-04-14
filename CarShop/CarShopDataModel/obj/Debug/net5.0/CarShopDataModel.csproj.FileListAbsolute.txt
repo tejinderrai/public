@@ -1,0 +1,12 @@
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\net5.0\CarShopDataModel.deps.json
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\net5.0\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\net5.0\ref\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\net5.0\CarShopDataModel.pdb
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.csprojAssemblyReference.cache
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.AssemblyInfoInputs.cache
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.AssemblyInfo.cs
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.csproj.CoreCompileInputs.cache
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\ref\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\net5.0\CarShopDataModel.pdb
