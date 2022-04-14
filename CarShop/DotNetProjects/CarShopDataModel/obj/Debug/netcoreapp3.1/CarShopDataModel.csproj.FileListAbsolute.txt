@@ -1,0 +1,9 @@
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\netcoreapp3.1\CarShopDataModel.deps.json
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\netcoreapp3.1\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\bin\Debug\netcoreapp3.1\CarShopDataModel.pdb
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.AssemblyInfoInputs.cache
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.AssemblyInfo.cs
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.csproj.CoreCompileInputs.cache
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.dll
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.pdb
+C:\AspireCSProjects2021\CarShop\CarShopDataModel\obj\Debug\netcoreapp3.1\CarShopDataModel.csprojAssemblyReference.cache
