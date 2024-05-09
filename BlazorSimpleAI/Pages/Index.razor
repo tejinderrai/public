@@ -1,0 +1,44 @@
+﻿@page "/"
+@inject IConfiguration configuration
+@using Azure;
+@using Azure.AI.OpenAI;
+@using Components;
+
+<PageTitle>Index</PageTitle>
+
+<div class="centeralign">
+<h4>Enter a question to ask Azure OpenAI?</h4>
+    <div class="input-group mb-3 ">
+        <input type="text" @ref="QuestionBox" class="form-control textbox-parameters"  @bind="Question">
+        <div style="padding-left:10px;"/>
+        <button id="SubmitQuestion" class="btn btn-primary" @onclick="SubmitQuestion">Submit</button>
+    </div>        
+</div>
+
+<BlazorSimpleAI.Components.AzureOpenAIChat @bind-Question="Question" />
+
+@code {
+
+    string ?Question { get; set; }  
+    private ElementReference QuestionBox;
+
+
+    private void SubmitQuestion()
+    {
+        this.StateHasChanged();
+    }
+
+    private void OnChange(ChangeEventArgs e)
+    {
+        Question = e.Value.ToString();
+        this.StateHasChanged();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await QuestionBox.FocusAsync();
+        }
+    }
+}
