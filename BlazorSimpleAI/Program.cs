@@ -1,6 +1,7 @@
 using BlazorSimpleAI.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Radzen;
 
 namespace BlazorSimpleAI
 {
@@ -15,6 +16,15 @@ namespace BlazorSimpleAI
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
 
+            // -- Radzen Sevices
+            //builder.Services.AddScoped<DialogService>();
+            //builder.Services.AddScoped<NotificationService>();
+            builder.Services.AddRadzenComponents();
+
+
+            // Add HttpClient
+            //builder.Services.AddHttpClient();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -25,7 +35,9 @@ namespace BlazorSimpleAI
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+
+
+            //app.UseHttpsRedirection();
 
             app.UseStaticFiles();
 
