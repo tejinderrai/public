@@ -1,22 +1,13 @@
-﻿@inherits LayoutComponentBase
+﻿@using Radzen.Blazor
+@inherits LayoutComponentBase
 
-<PageTitle>BlazorSimpleAI</PageTitle>
+<NavMenu />
 
-<div class="page">
-@*    <div class="sidebar">
-        <NavMenu />
-    </div>*@
 
-    <main>
-        <div class="top-row px-4">
-            <div class="centeralign">
-                <h4>Azure OpenAI Sample Application</h4>
-            </div>
-          @*  <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>*@
-        </div>
+<main class="container">
+    @Body
+</main>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<RadzenComponents/>
+
+
