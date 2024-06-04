@@ -52,6 +52,8 @@
         string visionEndpoint = configuration["AzureVsionConfig:AzureAIVisionEndpoint"];
         string OpenAIKeyCredential = configuration["AzureVsionConfig:AzureAIVisionKeyCredential"];
 
+
+
         // Generate a account SAS for the blob file
         var sasKey = CreateServiceSASBlob(FileName).Result;
         var uri = "https://" + azureStorageAccountName + ".blob.core.windows.net/" + azureStorageContainer + "/" + FileName + "?" + sasKey;
@@ -64,6 +66,10 @@
         ImageAnalysisResult result = await client.AnalyzeAsync(new Uri(uri), VisualFeatures.Read);
         ImageAnalysisResult resulttags = await client.AnalyzeAsync(new Uri(uri), VisualFeatures.Tags);
 
+
+
+
+
         foreach (var line in result.Read.Blocks.SelectMany(block => block.Lines))
         {
             allText += line.Text + " ";
@@ -73,7 +79,10 @@
         imageDetails.Width = result.Metadata.Width;
         imageDetails.Height = result.Metadata.Height;
         
+
         NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Processing completed.." });
+
+
 
         await ShowImageDialog(uri);
 
