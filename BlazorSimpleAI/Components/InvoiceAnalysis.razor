@@ -1,0 +1,95 @@
+﻿@inject IConfiguration configuration
+@using System.IO
+@using Azure.Storage.Blobs
+@inject NotificationService NotificationService
+
+<label for="inputFile" class="btn btn-secondary">
+    <InputFile id="inputFile" OnChange="@UploadFiletoAzBlobStorage" class="d-none" />
+    Upload File
+</label>
+
+@*<p>@status</p>*@
+
+@if (fileSelected)
+{
+    <p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border alert-success" />
+            <span class="sr-only">Uploading file...</span>
+        </div>
+    </p>
+}
+
+<BlazorSimpleAI.Components.InvoiceFileList @bind-RefreshComponent="Refresh"></BlazorSimpleAI.Components.InvoiceFileList>
+
+@code {
+
+    //string status;
+    bool fileSelected = false;
+    string Refresh = "1";
+    private string localFileName { get; set; } = "Not Selected";
+    private string? azureStorageConnectionString;
+    private string? azureStorageContainer;
+
+    private void UpdateStatus(ChangeEventArgs e)
+    {
+        //status = e.Value.ToString();
+        StateHasChanged();
+    }
+
+    //public class formModel
+    //{
+    //    public string filename { get; set; }
+    //}
+
+    async Task UploadFiletoAzBlobStorage(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+
+        //status = "";
+
+        if (file != null)
+        {
+
+            fileSelected = true;
+
+            azureStorageConnectionString = configuration["AzureStorageConfig:AzureStorageConnectionString"];
+            azureStorageContainer = configuration["AzureStorageConfig:AzureStorageInvoiceContainer"];
+
+
+            // Nax File Size ~ 50MB
+            long maxFileSize = 1024 * 1024 * 50;
+
+            BlobContainerClient container = new BlobContainerClient(azureStorageConnectionString, azureStorageContainer);
+
+            try
+            {
+                BlobClient blob = container.GetBlobClient(file.Name);
+                using (Stream fs = file.OpenReadStream(maxFileSize))
+                {
+                    await blob.UploadAsync(fs);
+                }
+            }
+            catch (Exception ex)
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = "Error accessing storage." });
+            }
+            finally
+            {
+                // Clean up after the test when we're finished
+            }
+
+            // status = $"Finished loading {file.Size/1024/1024} MB from {file.Name
+            //status = "File uploaded.";
+            fileSelected = false;
+            Refresh = "1";
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "File Uploaded." });
+
+
+        }
+        else
+        {
+            // status = $"No file selected!";
+        }
+    }
+}
