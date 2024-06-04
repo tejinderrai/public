@@ -1,0 +1,45 @@
+﻿@page "/invoice"
+@inject IConfiguration configuration
+@using Azure;
+@using Azure.AI.OpenAI;
+@using Components;
+
+@*Record Audio using Microsoft Azure Cognitive Services*@
+@*@using Microsoft.CognitiveServices.Speech;
+@using Microsoft.CognitiveServices.Speech.Audio;*@
+
+<PageTitle>Invoice Loader</PageTitle>
+
+<h5>Invoice Loader</h5>
+<BlazorSimpleAI.Components.InvoiceLoader/>
+
+
+@code {
+
+
+
+    private void SubmitQuestion()
+    {
+        this.StateHasChanged();
+    }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+    }
+
+@*    private async void RecordAudio()
+    {
+        var speechConfig = SpeechConfig.FromSubscription("005ca98688984dd7a1d9380937af799d", "uksouth");
+
+        using var audioConfig = AudioConfig.FromDefaultMicrophoneInput();
+        using var speechRecognizer = new SpeechRecognizer(speechConfig, audioConfig);
+
+        //Console.WriteLine("Speak into your microphone.");
+        var result = await speechRecognizer.RecognizeOnceAsync();
+        Question = result.Text;
+        //Console.WriteLine($"RECOGNIZED: Text={result.Text}");
+        this.StateHasChanged();
+    }*@
+}

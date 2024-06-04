@@ -1,0 +1,63 @@
+﻿@using Azure;
+@using Azure.AI.OpenAI;
+@inject IConfiguration configuration
+
+@if (!string.IsNullOrWhiteSpace(AzureOpenAIResponse))
+{
+    if (RetroResponse == true) {
+        <label class="aitext">@SubmittedDateTime</label>
+        <label class="aitext">@AzureOpenAIResponse</label>
+    }
+    else
+    {
+        <label class="questiontextbasic">@SubmittedDateTime</label>
+        <label class="aitextbasic">@AzureOpenAIResponse</label>
+    }
+}
+
+@code {
+
+
+    // See:https://learn.microsoft.com/en-us/aspnet/core/blazor/components/splat-attributes-and-arbitrary-parameters?view=aspnetcore-8.0
+    [Parameter]
+    public string ?Question { get; set; }
+
+    [Parameter] 
+    public EventCallback<string> QuestionChanged { get; set; }
+
+    private string ?SubmittedDateTime;
+
+    private string ?AzureOpenAIResponse { get; set; }
+
+    private string ?OpenAIEndpoint;
+    private string ?OpenAIKeyCredential;
+    private string ?OpenAIDeploymentName;
+    private bool ?RetroResponse;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(Question))
+        {
+            OpenAIEndpoint = configuration["AzureAIConfig:OpenAIEndpoint"];
+            OpenAIKeyCredential = configuration["AzureAIConfig:OpenAIKeyCredential"];
+            OpenAIDeploymentName = configuration["AzureAIConfig:OpenAIDeploymentName"];
+            RetroResponse = configuration.GetValue<bool>("AzureAIConfig:RetroResponse");
+
+            SubmittedDateTime = $"Question: " + Question + " submitted " + DateTime.Now;
+
+            OpenAIClient client = new(new Uri(OpenAIEndpoint), new AzureKeyCredential(OpenAIKeyCredential));
+
+            var chatCompletionsOptions = new ChatCompletionsOptions()
+                {
+                    DeploymentName = OpenAIDeploymentName,
+                    Messages =
+                    {
+                        new ChatRequestUserMessage(Question)
+                    }
+                };
+
+            Response<ChatCompletions> response = await client.GetChatCompletionsAsync(chatCompletionsOptions);
+            AzureOpenAIResponse = response.Value.Choices[0].Message.Content;
+        }
+    }
+}

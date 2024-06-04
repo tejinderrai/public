@@ -1,0 +1,108 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorSimpleAI
+build_property.RootNamespace = BlazorSimpleAI
+build_property.ProjectDir = D:\GitHub\Public\tejinderrai\public\BlazorSimpleAI\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\GitHub\Public\tejinderrai\public\BlazorSimpleAI
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/ImageDetailDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbWFnZURldGFpbERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/InvoiceAnalysis.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlQW5hbHlzaXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/InvoiceDialogue.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlRGlhbG9ndWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/InvoiceFileList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlRmlsZUxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/InvoiceViewer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlVmlld2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/VisionBlobFileList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaXNpb25CbG9iRmlsZUxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/AzureOpenAIChat.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBenVyZU9wZW5BSUNoYXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xopjhbzy4u
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/BlazorMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xCbGF6b3JNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-owqllxb1rj
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/InvoiceLoader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xJbnZvaWNlTG9hZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-j3lbx2im7m
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Components/VisionBlobLoader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaXNpb25CbG9iTG9hZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-d15h52zztf
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-x7yfgg4kwu
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/Invoice.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52b2ljZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-4k1psbvjfq
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/Vision.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlzaW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-tuqpb46zp4
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jbn9sf205s
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Public/tejinderrai/public/BlazorSimpleAI/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

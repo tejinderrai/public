@@ -1,0 +1,142 @@
+/* _content/BlazorSimpleAI/Components/AzureOpenAIChat.razor.rz.scp.css */
+.aitext[b-xopjhbzy4u] {
+    background-color: black;
+    background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 140% );
+    /*height: 100vh;*/
+    color: white;
+    font: 1.1rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+}
+
+.aitextbasic[b-xopjhbzy4u] {
+    color: limegreen;
+    font: 1.1rem Inconsolata, monospace;
+}
+
+.questiontextbasic[b-xopjhbzy4u] {
+    color: deepskyblue;
+}
+
+
+/* _content/BlazorSimpleAI/Components/BlazorMenu.razor.rz.scp.css */
+.customul[b-owqllxb1rj] {
+    display: flex;
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.h5[b-owqllxb1rj] {
+
+    padding-top:7px!important;
+}
+
+.navbar-toggler[b-owqllxb1rj] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-owqllxb1rj] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-owqllxb1rj] {
+    font-size: 1.1rem;
+}
+
+.oi[b-owqllxb1rj] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-owqllxb1rj] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-owqllxb1rj] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-owqllxb1rj] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-owqllxb1rj]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item[b-owqllxb1rj]  a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .nav-item[b-owqllxb1rj]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-owqllxb1rj] {
+        display: none;
+    }
+
+    .collapse[b-owqllxb1rj] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+/* _content/BlazorSimpleAI/Components/InvoiceLoader.razor.rz.scp.css */
+rz-button rz-button-md rz-variant-filled rz-primary rz-shade-default[b-j3lbx2im7m] {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58c;
+}
+/* _content/BlazorSimpleAI/Components/VisionBlobLoader.razor.rz.scp.css */
+rz-button rz-button-md rz-variant-filled rz-primary rz-shade-default[b-d15h52zztf] {
+    color: #fff;
+    background-color: #0b5ed7;
+    border-color: #0a58c;
+}
+/* _content/BlazorSimpleAI/Pages/Index.razor.rz.scp.css */
+.centeralign[b-x7yfgg4kwu] {
+    margin: auto;
+    width: 50%;
+    text-align:center;
+    /*border: 3px solid green;*/
+   /* padding: 10px;*/
+}
+/* _content/BlazorSimpleAI/Pages/Invoice.razor.rz.scp.css */
+.centeralign[b-4k1psbvjfq] {
+    margin: auto;
+    width: 50%;
+    text-align:center;
+    /*border: 3px solid green;*/
+   /* padding: 10px;*/
+}
+/* _content/BlazorSimpleAI/Pages/Vision.razor.rz.scp.css */
+.centeralign[b-tuqpb46zp4] {
+    margin: auto;
+    width: 50%;
+    text-align:center;
+    /*border: 3px solid green;*/
+   /* padding: 10px;*/
+}
+/* _content/BlazorSimpleAI/Shared/NavMenu.razor.rz.scp.css */
+.navbar[b-jbn9sf205s] {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+}

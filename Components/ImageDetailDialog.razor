@@ -1,0 +1,109 @@
+﻿@inject IConfiguration configuration
+@inject NotificationService NotificationService
+@inject Radzen.DialogService dialogService
+@using Azure.AI.Vision.ImageAnalysis;
+@using Azure.Storage;
+@using Azure.Storage.Blobs;
+@using Azure.Storage.Sas;
+@using Radzen
+@using Radzen.Blazor
+@using Azure
+@using Data
+
+<RadzenDataGrid Data="@enumerableFiles" TItem="AzureBlobFile" CssClass="thead-light" EmptyText="No data!">
+    <Columns>
+        <RadzenDataGridColumn TItem="AzureBlobFile" Title="Actions">
+            <Template Context="file">
+                <RadzenButton Text="Process" Size="ButtonSize.Medium" ButtonStyle="ButtonStyle.Secondary" Click="@((args) => ProcessFile(file.FileName))" />
+                <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" Click="@(args => ProcessFile(file.FileName))" Text="Process" ButtonStyle="ButtonStyle.Info" />
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+
+    [Parameter]
+    public string Text { get; set; }
+
+    List<AzureBlobFile> files = new List<AzureBlobFile>();
+    IEnumerable<AzureBlobFile>? enumerableFiles;
+
+    private static string? azureStorageConnectionString;
+    private static string? azureStorageContainer;
+    private static string? azureStorageAccountName;
+    private static string? azureStorageAccountKey;
+
+
+    private async Task ProcessFile(string FileName)
+    {
+
+        string allText = "";
+        string visionEndpoint = configuration["AzureVsionConfig:AzureAIVisionEndpoint"];
+        string OpenAIKeyCredential = configuration["AzureVsionConfig:AzureAIVisionKeyCredential"];
+
+        // Generate a account SAS for the blob file
+        var sasKey = CreateServiceSASBlob(FileName).Result;
+        var uri = "https://" + azureStorageAccountName + ".blob.core.windows.net/" + azureStorageContainer + "/" + FileName + "?" + sasKey;
+
+        // Create an Image Analysis client.
+        ImageAnalysisClient client = new ImageAnalysisClient(new Uri(visionEndpoint), new AzureKeyCredential(OpenAIKeyCredential));
+        // Notify the user of the submission
+        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "File submitted for processing.." });
+        // Submit the image to the client - Vision Endpoint
+        ImageAnalysisResult result = await client.AnalyzeAsync(new Uri(uri), VisualFeatures.Read);
+        ImageAnalysisResult resulttags = await client.AnalyzeAsync(new Uri(uri), VisualFeatures.Tags);
+
+        foreach (var line in result.Read.Blocks.SelectMany(block => block.Lines))
+        {
+            allText += line.Text + " ";
+        }
+
+        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Processing completed.." });
+
+
+        //await DialogService.OpenAsync<DialogCardPage>($"Order {orderID}",
+        //       new Dictionary<string, object>() { { "OrderID", orderID } },
+        //       new DialogOptions() { Width = "700px", Height = "512px", Resizable = true, Draggable = true });
+    }
+
+    public async Task<string> CreateServiceSASBlob(string BlobName)
+    {
+        azureStorageConnectionString = configuration["AzureStorageConfig:AzureStorageConnectionString"];
+        azureStorageContainer = configuration["AzureStorageConfig:AzureStorageContainer"];
+
+        azureStorageAccountName = configuration["AzureStorageConfig:AzureStorageAccountName"];
+        azureStorageAccountKey = configuration["AzureStorageConfig:AzureStorageAccountKey"];
+
+        //  Creates a client to the BlobService using the connection string.
+        var blobServiceClient = new BlobServiceClient(azureStorageConnectionString);
+
+        //  Gets a reference to the container.
+        var blobContainerClient = blobServiceClient.GetBlobContainerClient(azureStorageContainer);
+
+        //  Gets a reference to the blob in the container
+        BlobClient blobClient = blobContainerClient.GetBlobClient(BlobName);
+
+        //  Defines the resource being accessed and for how long the access is allowed.
+        var blobSasBuilder = new BlobSasBuilder
+            {
+                StartsOn = DateTime.UtcNow.AddHours(-1),
+                ExpiresOn = DateTime.UtcNow.AddHours(2),
+                BlobContainerName = azureStorageContainer,
+                BlobName = BlobName,
+            };
+
+        //  Defines the type of permission.
+        blobSasBuilder.SetPermissions(BlobSasPermissions.Read);
+
+        //  Builds an instance of StorageSharedKeyCredential
+        var storageSharedKeyCredential = new StorageSharedKeyCredential(azureStorageAccountName, azureStorageAccountKey);
+
+        //  Builds the Sas URI.
+        BlobSasQueryParameters sasQueryParameters = blobSasBuilder.ToSasQueryParameters(storageSharedKeyCredential);
+
+        return sasQueryParameters.ToString();
+    }
+
+
+}

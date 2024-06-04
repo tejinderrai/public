@@ -1,0 +1,19 @@
+﻿.aitext {
+    background-color: black;
+    background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 140% );
+    /*height: 100vh;*/
+    color: white;
+    font: 1.1rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+}
+
+.aitextbasic {
+    color: limegreen;
+    font: 1.1rem Inconsolata, monospace;
+}
+
+.questiontextbasic {
+    color: deepskyblue;
+}
+
+

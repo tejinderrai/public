@@ -1,0 +1,63 @@
+﻿<div class="top-row ps-2 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="text-align:center;" href="">Blazor Simple AI</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-expand bg-primary mb-1">
+    <div class="container-fluid">
+       <a class="navbar-brand" href="">BlazingTopMenu</a>
+        <button class="navbar-toggler @NavButtonCssClass" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/">
+                        <span aria-hidden="true"></span> New Document
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="vision">
+                        <span aria-hidden="true"></span> Document List
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    Azure OpenAI Sample Application
+@*
+<div>
+    <ul class="customul">
+
+        <li>
+            <NavLink href="/">Chat</NavLink>
+        </li>
+        <li>
+            <NavLink href="/Vision">Vision</NavLink>
+        </li>
+    </ul>
+</div>*@
+
+@code {
+
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private string? NavBarCssClass => collapseNavMenu ? null : "show";
+    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
