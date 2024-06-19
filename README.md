@@ -3,6 +3,8 @@ Thank you for landing here, in my public code repository.
 
 This is where I share all my code as community contributions.
 
+Blazor Simple AI is an interactive SPA which demonstrates various Microsoft Azure AI service capabilities.
+
 RSSFeedRead is a console application which reads the dotnet teams blog posts.
 
 EventHubConsoleRESTAPICaller is a console application which writes a message to An Azure Event Hub using the REST API with SAS authentication.
