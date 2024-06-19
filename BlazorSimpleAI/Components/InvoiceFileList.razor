@@ -22,12 +22,8 @@
             <RadzenDataGridColumn TItem="AzureBlobFile" Title="Actions">
                 <Template Context="file">
                     @*<RadzenButton Text="Process" Size="ButtonSize.Medium" ButtonStyle="ButtonStyle.Secondary" Click="@((args) => ProcessFile(file.FileName))" />*@
-                    <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" Click="@(args => ViewFile(file.FileName))" Text="View" ButtonStyle="ButtonStyle.Info" />
+                    <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" class="" Click="@(args => ViewFile(file.FileName))" Text="View" ButtonStyle="ButtonStyle.Info" />
                     <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" Click="@(args => ProcessFile(file.FileName))" Text="Process" ButtonStyle="ButtonStyle.Info" />
-                    @if (invoiceAnalaysis.InvoiceItems  != null)
-                    {
-                        <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" Click="@(args => CreateInterfaceFile())" Text="Submit" ButtonStyle="ButtonStyle.Info" />
-                    }
                 </Template>
             </RadzenDataGridColumn>
         </Columns>
@@ -164,9 +160,10 @@
 
                             if (itemFields.TryGetValue("Quantity", out DocumentField itemQuantityField))
                             {
-                                if (itemQuantityField.FieldType == DocumentFieldType.String)
+                                if (itemQuantityField.FieldType == DocumentFieldType.Double)
                                 {
-                                    string itemQuantity = itemQuantityField.Value.AsString();
+                                    Double itemQuantity = itemQuantityField.Value.AsDouble();
+                                    item.Quantity = itemQuantity;
                                 }
                             }
 
@@ -178,6 +175,7 @@
                                     item.Amount = itemAmount.Amount.ToString();
                                 }
                             }
+
                         }
 
                         invoiceItems.Add(item);
@@ -251,22 +249,28 @@
             <p>Customer Address: <b>@invoiceAnalaysis.CustomerAddress</b></p>
             <table>
                 <tr>
+                    <th>Quantity</th>
                     <th>Description</th>
                     <th>Amount</th>
                 </tr>
                 @foreach (InvoiceItem item in invoiceAnalaysis.InvoiceItems)
                 {
                     <tr>
+                        <td>@item.Quantity</td>
                         <td>@item.ItemDescription</td>
-                        <td>@item.Amount</td>
+                        <td>£@item.Amount</td>
                     </tr>
                 }
             </table>
-            <p>Tax: <b>@invoiceAnalaysis.Tax</b></p>
-            <p>Total Amount: <b>@invoiceAnalaysis.InvoiceTotal</b></p>
+            <p>Tax: <b>£@invoiceAnalaysis.Tax</b></p>
+            <p>Total Amount: <b>£@invoiceAnalaysis.InvoiceTotal</b></p>
                 <RadzenStack Orientation="Orientation.Horizontal" Gap="0.1rem" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.SpaceBetween">
                     <RadzenStack Orientation="Orientation.Vertical">
                         <RadzenButton Text="Close" Click="() => ds.Close(false)" ButtonStyle="ButtonStyle.Info" />
+                @if (invoiceAnalaysis.InvoiceItems != null)
+                {
+                    <RadzenButton Variant="Variant.Flat" Shade="Shade.Dark" Click="@(args => CreateInterfaceFile())" Text="Submit" ButtonStyle="ButtonStyle.Info" />
+                }
                     </RadzenStack>
                 </RadzenStack>
         </RadzenStack>
