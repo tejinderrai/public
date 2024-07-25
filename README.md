@@ -11,6 +11,8 @@ EventHubConsoleRESTAPICaller is a console application which writes a message to 
 
 AzKeyVaultSecretReaderConsoleApp us a consolel application that reads a secret from Azure Key Vault using managed identity authentication.
 
+KeyVaultSecretReaderFunctionApp is an Azure Function App that reads a secret from Azure Key Vault using managed identity authentication. Environment variables are used to retrieve the Key Vault URL and Secret Name.
+
 CosmosDBWorld is a Blazor Server project, which reads countries and cities from a Cosmos DB collection. The solution used JSInterop, to interact with a Bing maps component to refresh the bing map on the main index page. A small set of JavaScript functions interact with updating the map, after the Blazor UI components for the Country and City are changed. DevExpress components are embedded into this project but do not need to be used. You must update appsettings.json with all your Cosmos DB settings and /Pages/_Host.cshtml to enter your Bing Maps key.
 
 PowerShellScripts is a folder of my PowerShell scripts.
