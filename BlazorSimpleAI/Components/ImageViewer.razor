@@ -1,0 +1,12 @@
+﻿@page "/imageviewer"
+
+<h5>Azure Open AI Generated Image</h5>
+
+<iframe src="@Uri" width="1024" height="1024" frameborder="0">></iframe>
+
+@code {
+    [Parameter] 
+    public string Uri {get;set;}
+
+    // Replace this URL with the actual URL of the PDF from your open REST API
+}

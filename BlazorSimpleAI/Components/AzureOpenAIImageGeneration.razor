@@ -1,0 +1,73 @@
+﻿@using Azure;
+@using Azure.AI.OpenAI;
+@inject DialogService DialogService
+
+@inject IConfiguration configuration
+
+@if (!string.IsNullOrWhiteSpace(AzureOpenAIResponse))
+{
+@*         <label class="questiontextbasic">@SubmittedDateTime</label>
+        <label class="aitextbasic">@AzureOpenAIResponse</label> *@
+}
+
+@if (GeneratingImage)
+{
+    <p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border alert-success" />
+            <span class="sr-only"> Azure Open AI is generating the image. Please wait...</span>
+        </div>
+    </p>
+}
+
+@code {
+
+    [Parameter]
+    public string ?Question { get; set; }
+
+    [Parameter] 
+    public EventCallback<string> QuestionChanged { get; set; }
+
+    private string ?SubmittedDateTime;
+
+    private string ?AzureOpenAIResponse { get; set; }
+
+    private string ?OpenAIEndpoint;
+    private string ?OpenAIKeyCredential;
+    private string ?OpenAIDeploymentName;
+    private bool GeneratingImage = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(Question))
+        {
+            OpenAIEndpoint = configuration["AzureAIConfig:OpenAIDALLEEndpoint"];
+            OpenAIKeyCredential = configuration["AzureAIConfig:OpenAIKeyDALLECredential"];
+            OpenAIDeploymentName = configuration["AzureAIConfig:OpenAIDALLEDeploymentName"];
+
+            SubmittedDateTime = $"Question: " + Question + " submitted " + DateTime.Now;
+
+            var client = new OpenAIClient(new Uri(OpenAIEndpoint), new AzureKeyCredential(OpenAIKeyCredential));
+            var imageGenerationOptions = new ImageGenerationOptions
+                {
+                    Prompt = Question,
+                    DeploymentName = OpenAIDeploymentName,
+                    ImageCount = 1,
+                    Size = new ImageSize("1024x1024"),
+                };
+
+            GeneratingImage = true;
+
+            Response<ImageGenerations> response = await client.GetImageGenerationsAsync(imageGenerationOptions);
+
+            AzureOpenAIResponse = response.Value.Data[0].Url.AbsoluteUri;
+
+            GeneratingImage = false;
+
+            await DialogService.OpenAsync<ImageViewer>("",
+            new Dictionary<string, object>() { { "Uri", AzureOpenAIResponse } },
+            new DialogOptions() { Width = "1620", Height = "1060", Resizable = true, Draggable = true });
+
+        }
+    }
+}
