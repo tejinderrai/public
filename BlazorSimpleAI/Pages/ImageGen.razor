@@ -1,0 +1,55 @@
+﻿@page "/imagegen"
+@inject IConfiguration configuration
+@using Azure;
+@using Azure.AI.OpenAI;
+@using Components;
+
+
+<PageTitle>Blazor Simple AI Home</PageTitle>
+
+<div class="centeralign">
+<h4>Enter a prompt for Azure Open AI to generate an image...</h4>
+    <div class="input-group mb-3">
+        <input type="text" @ref="QuestionBox" class="form-control textbox-parameters"  @bind="ImageGenerationPrompt">
+        <div style="padding-left:10px;"/>
+        <Radzen.Blazor.RadzenSpeechToTextButton class="padding-right:10px;" Change="@(args => OnSpeechCaptured(args, "SpeechToTextButton"))" />
+        <div style="padding-left:10px;" />
+        <button id="SubmitQuestion" class="btn btn-primary" @onclick="SubmitQuestion">Submit</button>
+    </div>        
+</div>
+
+<BlazorSimpleAI.Components.AzureOpenAIImageGeneration @bind-Question="ImageGenerationPrompt" />
+
+@code {
+
+    string ?ImageGenerationPrompt { get; set; }  
+    private ElementReference QuestionBox;
+    string RecordedSpeech = "";
+
+    private void SubmitQuestion()
+    {
+        this.StateHasChanged();
+    }
+
+    void OnSpeechCaptured(string speechValue, string name)
+    {
+        speechValue = speechValue.Trim(new Char[] { '.', '?' });
+        RecordedSpeech = speechValue;
+        ImageGenerationPrompt = RecordedSpeech;
+        this.StateHasChanged();
+    }
+
+    private void OnChange(ChangeEventArgs e)
+    {
+        ImageGenerationPrompt = e.Value.ToString();
+        this.StateHasChanged();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await QuestionBox.FocusAsync();
+        }
+    }
+}
