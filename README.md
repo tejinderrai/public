@@ -17,6 +17,7 @@ CosmosDBWorld is a Blazor Server project, which reads countries and cities from 
 
 PowerShellScripts is a folder of my PowerShell scripts.
 CopyMangedDisktoBlobStorage.ps1 - Copies managed disks to storage account containers and folders based on a .CSV input file.
+AzureBlobDownloadPSRESTAPI/PScriptsAzStorage - A script with a module library to download and delete Azure storage blobs with amanged identity authentication (for an Azure virtual machine with a system assigend manage identity and Azure Storage Blob Data Contributor RBAC role assignment.
 
 DVLAConsoleAPICaller
 This is a sample Console application which makes a request to the DVLA Vehicle Enquiry Service API. You will need to request your own API key from the DVLA, link below.
