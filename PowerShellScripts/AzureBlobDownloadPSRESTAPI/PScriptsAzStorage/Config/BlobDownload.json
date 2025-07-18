@@ -1,7 +1,7 @@
 {
   "ScriptPath": "C:\\PScriptsAzStorage",
   "AzureBlobStorageAccountName": "[Azure Storage Account name excluding .blob.core.windows.net]",
-  "AzureBlobStorageContainerName": "[Azure Storage Account Contianer Name]",
+  "AzureBlobStorageContainerName": "[Azure Storage Account Container Name]",
   "LocalBlobDownloadPath": "C:\\BlobDownloads",
   "LoggingDirectory": "C:\\PScriptsAzStorage\\Log",
   "LogFileName": "BlobDownLoad.log"
